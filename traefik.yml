@@ -16,5 +16,5 @@ api:
 metrics:
   prometheus: {}
 
-pilot:
-  token: "1bc51da9-fea7-42d6-a4b3-bae3168ef4c9"
+# pilot:
+#  token: "this-pilot-id-is-burnt"
