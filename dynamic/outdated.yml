@@ -1,10 +1,10 @@
-
+---
 http:
   services:
     otd-service:
       loadBalancer:
         servers:
-        - url: "https://outdated.at/"
+          - url: "https://outdated.at"
   middlewares:
     otd-stripprefix:
       stripPrefix:
@@ -12,7 +12,8 @@ http:
           - "/otd"
   routers:
     otd-router:
-      rule: "Path(`/otd`)"
+      rule: "PathPrefix(`/otd`)"
       service: otd-service
       middlewares:
         - "otd-stripprefix"
+...

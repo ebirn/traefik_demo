@@ -4,15 +4,15 @@ http:
     goog-service:
       loadBalancer:
         servers:
-        - url: "https://google.com"
+        - url: "https://www.google.com"
   middlewares:
     goog-stripprefix:
       stripPrefix:
         prefixes:
           - "/goog"
   routers:
-    otd-router:
-      rule: "Path(`/goog`)"
+    goog-router:
+      rule: "PathPrefix(`/goog/`)"
       service: goog-service
       middlewares:
         - "goog-stripprefix"
