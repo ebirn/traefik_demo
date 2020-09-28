@@ -1,0 +1,18 @@
+
+http:
+  services:
+    otd-service:
+      loadBalancer:
+        servers:
+        - url: "https://outdated.at/"
+  middlewares:
+    otd-stripprefix:
+      stripPrefix:
+        prefixes:
+          - "/otd"
+  routers:
+    otd-router:
+      rule: "Path(`/otd`)"
+      service: otd-service
+      middlewares:
+        - "otd-stripprefix"
