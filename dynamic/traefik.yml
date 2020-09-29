@@ -1,0 +1,15 @@
+http:
+  middlewares:
+    # Define an authentication mechanism
+    dashboard-auth:
+      basicAuth:
+        users:
+        - test:$apr1$H6uskkkW$IgXLP6ewTrSuBkTrqE8wj/
+  routers:
+    dashboard:
+      entrypoints:
+        - "traefik"
+      rule: "PathPrefix(`/`)"
+      service: "api@internal"
+      middlewares:
+        - dashboard-auth

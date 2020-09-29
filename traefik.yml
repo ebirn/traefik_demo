@@ -9,8 +9,9 @@ providers:
     watch: true
 
 # API and dashboard configuration
+# allowing basic out
 api:
-  insecure: true
+  dashboard: true
 
 
 metrics:
